@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>따라만들기</title>
+    <style>
+        html, body{
+            margin: 0 auto;
+            padding: 0;
+        }
+        body{
+            width: 1000px;
+        }
+        section{
+            position: relative;
+        }
+        a{
+            text-decoration: none;
+        }
+        .headerCategories{
+            background-color: #03787c;
+            text-align: right;
+            height: 25px;
+            font-size: 13px;
+            padding-top: 4px;
+            padding-right: 20px;
+            
+        }
+        .headerCategories a{
+            color: white;   
+            padding-left: 10px;       
+        }
+        .headerSearch{
+            background-color: #f2f2f2;
+            height: 25px;
+            font-size: 12px;
+            padding-top: 6px;
+            padding-left: 20px;
+        }
+        .headerSearch a{
+            color: black;
+        }
+        .headerSearch div{
+            height: 25px;
+            width: 75px;
+            text-align: center;
+        }
+        .headerSearch div:hover{
+            background-color: white;
+            border: 1px solid lightgray;
+            border-bottom: 0;
+        }
+        .logoimg{
+            float: left;
+            width: 165px;
+            padding-top: 60px;
+            padding-left: 17px;
+            padding-right: 25px;
+        }
+        .logoimg img{
+            cursor: pointer;
+        }
+        .indexMenu a{
+            padding-left: 14px;
+        }
+        .indexMenu a img{
+            width: 180px;
+            height: 150px;
+            background-color: #0078D7;
+        }
+        .indexMenu a img:hover{
+            width: 180px;
+            height: 150px;
+            background-color: #00188F;
+
+        }
+        .categories{
+            width: 170px;
+            height: 318px;
+            background-color: #0078D7;
+            padding-left: 17px;
+            padding-right: 25px;
+            color: white;
+        }
+        .categories h1{
+            padding-bottom: 30px;
+            padding-top: 30px;
+        }
+        .categories div{
+            border-top: 1px solid white;
+            border-bottom: 1px solid white;
+            margin-bottom: 20px;
+            font-size: 13px;
+        }
+        .categories li{
+            list-style-type: none;
+            color: white;
+            padding-bottom: 5px;
+        }
+        .categories a{
+            color: white;
+            font-size: 13px;
+        }
+        .categories a:hover{
+            text-decoration: underline;
+        }
+        .calendar{
+            border: 1px solid black;
+            width: 170px;
+            height: 300px;
+            padding-left: 17px;
+            padding-right: 23px;
+            margin-top: 20px;
+        }
+        .leftMenu{
+            display: inline-block;
+        }
+        .sectionMain{
+            display: inline-block;
+            position: absolute;
+            margin-top: 20px;
+            margin-left: 7px;
+            width: 784px;
+        }
+        .today{
+            height: 150px;
+            width: 780px;
+            margin-bottom: 5px;
+            background-color: #0078D7;
+        }
+        .notice{
+            border: 1px solid lightgray;
+            height: 180px;
+            width: 460px;
+            margin-top: 10px;
+            display: inline-block;
+            padding: 10px;
+            position: relative;
+        }
+        .document{
+            border: 1px solid lightgray;
+            height: 160px;
+            width: 240px;
+            margin-left: 14px;
+            margin-top: 10px;
+            display: inline-block;
+            padding: 20px;
+            position: absolute;
+        }
+        .today img{
+            width: 100px;
+            margin-left: 40px;
+            margin-top: 30px;
+        }
+        .today div{
+            display: inline-block;
+        }
+        .today p{
+            font-size: 20px;
+        }
+        .name{
+            margin-left: 20px;
+            position: absolute;
+            top: 45px;
+        }
+        .todayday{
+            background-color: gray;
+            color: white;
+            height: 119px;
+            width: 150px;
+            position: absolute;
+            left: 240px;
+            text-align: center;
+            padding-top: 31px;
+            border-left: 1px solid white;
+            border-right: 1px solid white;
+        }
+        .todayday a{
+            font-size: 50px;
+            font-weight: bold;
+            color: white;
+        }
+        .todayday a:hover{
+            font-size: 50px;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+        .todayday a:active{
+            color: teal;
+        }
+        .todayday p{
+            font-size: 13px;
+            margin: 0;
+        }
+        .todayApp{
+            background-color:gray;
+            font-size: 14px;
+            width: 388px;;
+            position: absolute;
+            right: 4px;
+            padding-top: 45px;
+            height: 105px;
+            text-align: right;
+            font-weight: bold;
+        }
+        .todayApp table{
+            margin-left: 30px;
+        }
+        .todayApp td{
+            color: white;
+            padding-left: 20px;
+            padding-bottom: 20px;
+        }
+        .todayApp a{
+            color: white;
+        }
+        .todayApp a:hover{
+            text-decoration: underline;
+        }
+        .notice p{
+            font-size: 20px;
+            margin: 0;
+        }
+        .notice table{
+            font-size: 13px;
+        }
+        .notice h2{
+            font-size: 20px; 
+            margin: 0; 
+            width: 455px; 
+            text-align: left;
+        }
+        .noticeTitle{
+            width: 300px; 
+            overflow: hidden; 
+            position: relative; 
+            height: 23px;
+        }
+        .noticeTitle a{
+            position: absolute; 
+            top: 4px; 
+            color: black;
+        }
+        .noticeMore{
+            font-size: 12px;
+            background-color: lightgray;
+            width: 55px;
+            height: 20px;
+            text-align: center;
+            position: absolute;
+            top: 20px;
+            right: 30px;
+        }
+        .noticeMore a{
+            color: white;
+            font-weight: bold;
+            font-size: 11px;
+        }
+        .noteImg{
+            display: inline-block;
+        }
+        .moreImg{
+            display: inline-block;
+            margin-left: 100px;
+            position: absolute;
+        }
+        .documentList{
+            font-size: 13px;
+            margin-top: 10px;
+            overflow: hidden;
+            height: 17px;
+        }
+        .documentList a{
+            color: black;
+        }
+        .siteImg{
+            border: 1px solid lightgray;
+            width: 240px;
+            margin-left: 14px;
+            margin-top: 10px;
+            display: inline-block;
+            padding: 20px;
+            position: absolute;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- jsp연결 -->
+        <div class="headerCategories">
+            <a href="">Outlook</a>
+            <a href="">OneDrive</a>
+            <a href="">SharePoint</a>
+            <a href="">Teams</a>
+            <a href="">Bookings</a>
+            <a href="">Yammer</a>
+            <a href="">Power Automate</a>
+        </div>
+        <!-- 다른 페이지 연결시 목록 추가 -->
+        <div class="headerSearch">
+            <div>
+                <a>찾아보기</a>
+            </div>
+        </div>
+    </header>
+    <section>
+        <!-- jsp연결, 관리자 로그인시 관리자 클릭 가능 -->
+        <div class="indexMenu">
+            <div class="logoimg"><img src="/img/siteIcon.png"></div>
+            <a href=""><img src="/img/제목 없음.png" alt=""></a>
+            <a href=""><img src="/img/제목 없음.png" alt=""></a>
+            <a href=""><img src="/img/제목 없음.png" alt=""></a>
+            <a href=""><img src="/img/제목 없음.png" alt=""></a>
+        </div>
+        <!-- jsp연결 -->
+        <div class="leftMenu">
+            <div class="categories">
+                <h1>Categories</h1>
+                <div><p>게시판</p></div>
+                <li><a href="">공지사항</a></li>
+                <li><a href="">사내일정</a></li>
+                <li><a href="">문서</a></li>
+                <li><a href="">자유게시판</a></li>
+                <li><a href="">사이트링크</a></li>
+            </div>
+            <!-- 달력 라이브러리 추가 -->
+            <div class="calendar"></div>
+        </div>
+        <div class="sectionMain">
+            <div class="today">
+                <div><img src="/img/사용자.png" alt=""></div>
+                <!-- 로그인한 사람 이름 가져오기 -->
+                <div class="name"><strong><p>박요한</p></strong></div>
+                <!-- 날짜 요일 가져오기 -->
+                <div class="todayday">
+                    <a>29</a>
+                    <p>Thursday</p>
+                </div>
+                <div class="todayApp">
+                    <table>
+                        <tr>
+                            <td>결제할 문서</td>
+                            <td>진행중 문서</td>
+                            <td>참조된 문서</td>
+                        </tr>
+                        <!-- jsp연결, 목록별 총 갯수 가져오기 -->
+                        <tr>
+                            <td><a href="">0</a></td>
+                            <td><a href="">0</a></td>
+                            <td><a href="">0</a></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="notice">
+                <!-- 공지사항 불러오기 -->
+                <table>
+                    <th colspan="3"><h2>공지사항</h2></th>
+                    <tr>
+                        <td class="noticeTitle"><a href="">(주)데이터누리 청소당번 안내문_20200508</a></td>
+                        <td>2020.05.05</td>
+                        <td>작성자</td>
+                    </tr>
+                </table>
+                <!-- 공지사항jsp연결 -->
+                <div class="noticeMore">
+                    <a href="">MORE ></a>
+                </div>
+            </div>
+            <!-- 문서 불러오기, jsp연결 -->
+            <div class="document">
+                <div class="noteImg"><img src="/img/title_note.gif" alt=""></div>
+                <div class="moreImg"><a href=""><img src="/img/more_bt.png" alt=""></a></div>                  
+                <div class="documentList"><a href="">도서.jpg</a></div>
+            </div>
+            <div class="notice">
+                <!-- 결재대기 불러오기 -->
+                <table>
+                    <th colspan="3"><h2>결재대기</h2></th>
+                    <tr>
+                        <td class="noticeTitle"><a href="">(주)데이터누리 청소당번 안내문_20200508</a></td>
+                        <td>2020.05.05</td>
+                        <td>작성자</td>
+                    </tr>
+                </table>
+                <!-- 결재대기jsp연결 -->
+                <div class="noticeMore">
+                    <a href="">MORE ></a>
+                </div>
+            </div>
+            <!-- 게시판 불러오기, jsp연결 -->
+            <div class="document">
+                <div class="noteImg"><img src="/img/title_board.gif" alt=""></div>
+                <div class="moreImg"><a href=""><img src="/img/more_bt.png" alt=""></a></div>                  
+                <div class="documentList"><a href="">도서.jpg</a></div>
+            </div>
+            <div class="notice">
+                <!-- 결재진행 불러오기 -->
+                <table>
+                    <th colspan="3"><h2>결재진행</h2></th>
+                    <tr>
+                        <td class="noticeTitle"><a href="">(주)데이터누리 청소당번 안내문_20200508</a></td>
+                        <td>2020.05.05</td>
+                        <td>작성자</td>
+                    </tr>
+                </table>
+                <!-- 결재진행jsp연결 -->
+                <div class="noticeMore">
+                    <a href="">MORE ></a>
+                </div>
+            </div>
+            <div class="siteImg"><a href=""><img src="/img/title_site.gif" alt=""></a></div>
+        </div>
+    </section>
+</body>
+</html>
